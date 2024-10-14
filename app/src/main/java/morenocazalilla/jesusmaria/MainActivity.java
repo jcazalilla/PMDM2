@@ -1,6 +1,8 @@
 package morenocazalilla.jesusmaria;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    protected static final int PANTALLA_DESCRIPCION = 10;
     ArrayList<Personaje> listaPersonajes;
     RecyclerView recyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,15 +24,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //llamamos a la pantalla de detalle del personaj
         recyclerView.findViewById(R.id.detalle_personaje);
 
-
         inicializarDatos();
         iniciaAdapter();
+
+        recyclerView.setOnClickListener(this);
 
 
     }
@@ -58,5 +63,12 @@ public class MainActivity extends AppCompatActivity {
         Personaje Toad = new Personaje("Toad",
                 "Tiene manchas rojas en la cabeza, es muy alegre y leal.", R.mipmap.toad);
         listaPersonajes.add(Toad);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this, DetallePersonaje.class);
+        startActivity(intent);
     }
 }

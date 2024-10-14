@@ -1,5 +1,6 @@
 package morenocazalilla.jesusmaria;
 
+import android.app.DatePickerDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,15 @@ import java.util.ArrayList;
 public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
 
     ArrayList<Personaje> listPersonajes;
+    private ClickListener ClickListener;
+
+    public interface ClickListener {
+        void onItemClick(int position, View view);
+    }
 
     public MiAdaptador(ArrayList<Personaje> listPersonajes) {
         this.listPersonajes = listPersonajes;
+
     }
 
     @NonNull
@@ -27,11 +34,13 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
 
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item, parent, false);
+
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         holder.asignarPersonajes(listPersonajes.get(position));
     }
 
@@ -48,12 +57,14 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
         TextView description;
         CardView cardView;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            cardView=itemView.findViewById(R.id.cv);
+            cardView = itemView.findViewById(R.id.cv);
             name = itemView.findViewById(R.id.tv_name);
             description = itemView.findViewById(R.id.tv_description);
             photo = itemView.findViewById(R.id.iv_photo);
+
 
         }
 
@@ -65,5 +76,7 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
 
 
         }
+
+
     }
 }
