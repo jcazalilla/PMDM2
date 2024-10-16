@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements MiAdaptador.OnIte
     }
 
     private void abrirPantallaDetalle(int i, View view) {
-        Toast.makeText(this, "Se ha seleccionado " + listaPersonajes.get(i), 10).show();
+        Toast.makeText(this, "Se ha seleccionado " + listaPersonajes.get(i), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(MainActivity.this, DetallePersonaje.class);
         startActivity(intent);
     }
