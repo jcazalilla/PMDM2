@@ -13,16 +13,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-
+/**
+ * Clase adaptadora para RecyclerView
+ */
 public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
 
-    ArrayList<Personaje> listPersonajes;
-    private ClickListener ClickListener;
+    private ArrayList<Personaje> listPersonajes;
+    //objeto de tipo interface de nuestro paquete
+    // no de la clase android.widget
+    OnItemClickListener miListener;
 
-    public interface ClickListener {
-        void onItemClick(int position, View view);
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
     }
 
+    /**
+     * Constructor del adaptador
+     */
     public MiAdaptador(ArrayList<Personaje> listPersonajes) {
         this.listPersonajes = listPersonajes;
 
@@ -49,6 +56,15 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
         return listPersonajes.size();
     }
 
+
+    //setter del OnItemClickListener
+    public void setOnItemClickListener(OnItemClickListener onItemClick) {
+        this.miListener = onItemClick;
+    }
+
+    /**
+     * clase ViewHolder
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
         //los datos que tenemos en el layout item.xml
         //que mostraremos en el RecyclerView
@@ -57,7 +73,6 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
         TextView description;
         CardView cardView;
 
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.cv);
@@ -65,8 +80,16 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
             description = itemView.findViewById(R.id.tv_description);
             photo = itemView.findViewById(R.id.iv_photo);
 
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //código que queremos hacer cuando se pulse sobre un elemento
+                    //del recyclerView
+                    miListener.onItemClick(view, getAdapterPosition());
+                }
+            });
         }
+
 
         public void asignarPersonajes(Personaje personaje) {
 
@@ -76,7 +99,5 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
 
 
         }
-
-
     }
 }
