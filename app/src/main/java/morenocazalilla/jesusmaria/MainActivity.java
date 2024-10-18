@@ -31,10 +31,7 @@ public class MainActivity extends AppCompatActivity implements MiAdaptador.OnIte
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //llamamos a la pantalla de detalle del personaje
-       /*recyclerView.findViewById(R.id.detalle_personaje);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(miAdaptador);*/
+
 
         inicializarDatos();
         iniciaAdapter();
@@ -63,17 +60,24 @@ public class MainActivity extends AppCompatActivity implements MiAdaptador.OnIte
         //creamos la lista de personajes
         listaPersonajes = new ArrayList<>();
 
-        Personaje MarioBross = new Personaje("Mario Bross",
-                "Mario es muy positivo y siempre está alegre.", R.drawable.mario);
+        Personaje MarioBross = new Personaje("Mario",
+                "Mario es muy positivo y siempre está alegre.", R.drawable.mario,
+                "Increíble capacidad para saltar, destreza en el combate");
         listaPersonajes.add(MarioBross);
+        //*
         Personaje Peach = new Personaje("Peach",
-                "Siempre está trabajando para crear un mundo en el que todos puedan convivir juntos y felices.", R.drawable.peach);
+                "Siempre está trabajando para crear un mundo en el que todos puedan convivir juntos y felices.", R.drawable.peach,
+                "Puede flotar en el aire, lo que le da una buena ventaja al ser arrojada y poder regresar.");
         listaPersonajes.add(Peach);
+        //*
         Personaje Luigi = new Personaje("Luigi",
-                "Un poco de nervioso, especialmente si hay fantasmas por ahí. Es hermano de Mario.", R.drawable.luigi);
+                "Un poco de nervioso, especialmente si hay fantasmas por ahí. Es hermano de Mario.", R.drawable.luigi,
+                "Posee varias habilidades mágicas, flotar en el aire durante unos segundos,");
         listaPersonajes.add(Luigi);
+        //*
         Personaje Toad = new Personaje("Toad",
-                "Tiene manchas rojas en la cabeza, es muy alegre y leal.", R.drawable.toad);
+                "Tiene manchas rojas en la cabeza, es muy alegre y leal.", R.drawable.toad,
+                "Uno de los protectores de la Princesa Peach.");
         listaPersonajes.add(Toad);
     }
 
@@ -81,9 +85,16 @@ public class MainActivity extends AppCompatActivity implements MiAdaptador.OnIte
     @Override
     public void onItemClick(View view, int position) {
         Toast.makeText(this,
-                "Personjae seleccionado: "+listaPersonajes.get(position).name, Toast.LENGTH_SHORT).show();
+                "Personjae seleccionado: " + listaPersonajes.get(position).getName(), Toast.LENGTH_SHORT).show();
 
-        Intent intent=new Intent(MainActivity.this, DetallePersonaje.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("name", listaPersonajes.get(position).getName());
+        bundle.putString("description", listaPersonajes.get(position).getDescription());
+        bundle.putString("habilidades", listaPersonajes.get(position).getHabilidades());
+        bundle.putInt("id", position);
+
+        Intent intent = new Intent(MainActivity.this, DetallePersonaje.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }

@@ -77,7 +77,7 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
             super(itemView);
             cardView = itemView.findViewById(R.id.cv);
             name = itemView.findViewById(R.id.tv_name);
-            description = itemView.findViewById(R.id.tv_description);
+            //description = itemView.findViewById(R.id.tv_description);
             photo = itemView.findViewById(R.id.iv_photo);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +95,7 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
 
             photo.setImageResource(personaje.getPhotoID());
             name.setText(personaje.getName());
-            description.setText(personaje.getDescription());
+            //description.setText(personaje.getDescription());
 
 
         }
