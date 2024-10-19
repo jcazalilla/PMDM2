@@ -19,8 +19,6 @@ public class MainActivity extends AppCompatActivity implements MiAdaptador.OnIte
 
     private ArrayList<Personaje> listaPersonajes;
     private RecyclerView recyclerView;
-    private ActivityMainBinding binding;
-    private MiAdaptador miAdaptador;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +36,6 @@ public class MainActivity extends AppCompatActivity implements MiAdaptador.OnIte
 
 
     }
-
-    private void abrirPantallaDetalle(int i, View view) {
-        Toast.makeText(this, "Se ha seleccionado " + listaPersonajes.get(i), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(MainActivity.this, DetallePersonaje.class);
-        startActivity(intent);
-    }
-
 
     private void iniciaAdapter() {
         //pasamos la lista al adaptador
@@ -85,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements MiAdaptador.OnIte
     @Override
     public void onItemClick(View view, int position) {
         Toast.makeText(this,
-                "Personjae seleccionado: " + listaPersonajes.get(position).getName(), Toast.LENGTH_SHORT).show();
+                "Detalles cargados para : " + listaPersonajes.get(position).getName(), Toast.LENGTH_LONG).show();
 
         Bundle bundle = new Bundle();
         bundle.putString("name", listaPersonajes.get(position).getName());

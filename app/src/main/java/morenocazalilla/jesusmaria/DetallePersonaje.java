@@ -45,7 +45,6 @@ public class DetallePersonaje extends AppCompatActivity {
     private void presentarDatosEnPantalla() {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-
         textViewTitulo.setText(bundle.getString("name"));
         textViewDescripcion.setText(bundle.getString("description"));
         textViewHabilidades.setText(bundle.getString("habilidades"));
@@ -54,6 +53,7 @@ public class DetallePersonaje extends AppCompatActivity {
         switch (id) {
             case 0:
                 imageView.setImageResource(R.drawable.mario);
+
                 break;
             case 1:
                 imageView.setImageResource(R.drawable.peach);

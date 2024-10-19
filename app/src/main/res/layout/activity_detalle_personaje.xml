@@ -1,83 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.appcompat.widget.LinearLayoutCompat
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/detalle_personaje"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="12dp"
-    android:background="@color/white"
+    android:layout_margin="15dp"
+
+    android:orientation="vertical"
     tools:context=".DetallePersonaje">
 
 
     <TextView
         android:id="@+id/tv_personaje"
-        android:layout_width="256dp"
+        android:layout_width="290dp"
         android:layout_height="57dp"
+        android:layout_gravity="center"
         android:layout_marginTop="52dp"
         android:gravity="center"
-        android:textSize="45sp"
         android:textColor="@color/teal_700"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="45sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/iv_personaje"
-        android:layout_width="334dp"
-        android:layout_height="300dp"
-        android:layout_gravity="clip_vertical"
-        android:layout_marginTop="44dp"
+        android:layout_width="290dp"
+        android:layout_height="275dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:background="@null"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.301"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_personaje" />
+        android:padding="10dp" />
 
     <TextView
         android:id="@+id/tv_personaje_descripcion"
-        android:layout_width="82dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/transparent"
-        android:gravity="left"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_volver"
-        app:layout_constraintEnd_toStartOf="@+id/tv_habilidades"
-        app:layout_constraintHorizontal_bias="0.202"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_personaje"
-        app:layout_constraintVertical_bias="0.257" />
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginTop="28dp"
+        android:gravity="left" />
+
 
     <TextView
         android:id="@+id/tv_habilidades"
-        android:layout_width="321dp"
-        android:layout_height="51dp"
-        android:layout_marginEnd="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"
-        android:textColor="@color/teal_700"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_volver"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:elevation="@dimen/cardview_default_radius"
+        android:gravity="left" />
 
     <Button
         android:id="@+id/btn_volver"
         android:layout_width="116dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="28dp"
-        android:background="@color/teal_700"
+        android:layout_height="63dp"
+        android:layout_marginLeft="234dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
         android:text="Volver"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.76"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_personaje_descripcion"
-        app:layout_constraintVertical_bias="0.934" />
+        android:textSize="20sp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
