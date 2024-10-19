@@ -62,13 +62,13 @@ public class MainActivity extends AppCompatActivity implements MiAdaptador.OnIte
         listaPersonajes.add(Peach);
         //*
         Personaje Luigi = new Personaje("Luigi",
-                "Un poco de nervioso, especialmente si hay fantasmas por ahí. Es hermano de Mario.", R.drawable.luigi,
-                "Posee varias habilidades mágicas, flotar en el aire durante unos segundos,");
+                "Un poco de nervioso, especialmente si hay fantasmas por ahí. Es el hermano menor de Mario.", R.drawable.luigi,
+                "Salta más alto pero corre más lento.");
         listaPersonajes.add(Luigi);
         //*
         Personaje Toad = new Personaje("Toad",
-                "Tiene manchas rojas en la cabeza, es muy alegre y leal.", R.drawable.toad,
-                "Uno de los protectores de la Princesa Peach.");
+                "Tiene manchas en la cabeza, es muy alegre y leal.", R.drawable.toad,
+                "Es uno de los protectores de la Princesa Peach.");
         listaPersonajes.add(Toad);
     }
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements MiAdaptador.OnIte
     @Override
     public void onItemClick(View view, int position) {
         Toast.makeText(this,
-                "Detalles cargados para : " + listaPersonajes.get(position).getName(), Toast.LENGTH_LONG).show();
+                "Detalles cargados para " + listaPersonajes.get(position).getName(), Toast.LENGTH_LONG).show();
 
         Bundle bundle = new Bundle();
         bundle.putString("name", listaPersonajes.get(position).getName());

@@ -26,7 +26,7 @@ public class DetallePersonaje extends AppCompatActivity {
         btnVolver = findViewById(R.id.btn_volver);
         imageView = findViewById(R.id.iv_personaje);
         textViewTitulo = findViewById(R.id.tv_personaje);
-        textViewHabilidades= findViewById(R.id.tv_habilidades);
+        textViewHabilidades = findViewById(R.id.tv_habilidades);
         textViewDescripcion = findViewById(R.id.tv_personaje_descripcion);
 
         presentarDatosEnPantalla();
@@ -46,8 +46,8 @@ public class DetallePersonaje extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         textViewTitulo.setText(bundle.getString("name"));
-        textViewDescripcion.setText(bundle.getString("description"));
-        textViewHabilidades.setText(bundle.getString("habilidades"));
+        textViewDescripcion.setText("** Descripción:\n "+bundle.getString("description"));
+        textViewHabilidades.setText("** Habilidades: \n"+bundle.getString("habilidades"));
 
         int id = bundle.getInt("id");
         switch (id) {

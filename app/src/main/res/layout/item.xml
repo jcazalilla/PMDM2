@@ -24,9 +24,11 @@
 
         <TextView
             android:id="@+id/tv_name"
-            android:layout_width="221dp"
+            style="@style/estilo_titulo"
+            android:layout_width="248dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+
+            />
 
 
     </LinearLayout>
