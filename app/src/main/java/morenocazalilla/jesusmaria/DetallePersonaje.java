@@ -53,7 +53,6 @@ public class DetallePersonaje extends AppCompatActivity {
         switch (id) {
             case 0:
                 imageView.setImageResource(R.drawable.mario);
-
                 break;
             case 1:
                 imageView.setImageResource(R.drawable.peach);
