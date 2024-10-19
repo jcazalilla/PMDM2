@@ -14,7 +14,7 @@ public class DetallePersonaje extends AppCompatActivity {
 
     Button btnVolver;
     ImageView imageView;
-    TextView textViewTitulo, textViewDescripcion, textViewHabilidades;
+    TextView textViewDescripcion, textViewHabilidades;
 
 
     @Override
@@ -25,7 +25,6 @@ public class DetallePersonaje extends AppCompatActivity {
 
         btnVolver = findViewById(R.id.btn_volver);
         imageView = findViewById(R.id.iv_personaje);
-        textViewTitulo = findViewById(R.id.tv_personaje);
         textViewHabilidades = findViewById(R.id.tv_habilidades);
         textViewDescripcion = findViewById(R.id.tv_personaje_descripcion);
 
@@ -45,15 +44,13 @@ public class DetallePersonaje extends AppCompatActivity {
     private void presentarDatosEnPantalla() {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        textViewTitulo.setText(bundle.getString("name"));
-        textViewDescripcion.setText("** Descripción:\n "+bundle.getString("description"));
-        textViewHabilidades.setText("** Habilidades: \n"+bundle.getString("habilidades"));
+        textViewDescripcion.setText(bundle.getString("description"));
+        textViewHabilidades.setText(bundle.getString("habilidades"));
 
         int id = bundle.getInt("id");
         switch (id) {
             case 0:
                 imageView.setImageResource(R.drawable.mario);
-
                 break;
             case 1:
                 imageView.setImageResource(R.drawable.peach);
@@ -64,8 +61,6 @@ public class DetallePersonaje extends AppCompatActivity {
             case 3:
                 imageView.setImageResource(R.drawable.toad);
                 break;
-
-
         }
     }
 

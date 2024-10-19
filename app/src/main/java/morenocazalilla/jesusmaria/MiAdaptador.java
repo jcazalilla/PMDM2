@@ -65,6 +65,7 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.ViewHolder> {
     /**
      * clase ViewHolder
      */
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         //los datos que tenemos en el layout item.xml
         //que mostraremos en el RecyclerView
