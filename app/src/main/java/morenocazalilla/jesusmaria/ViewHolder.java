@@ -8,16 +8,16 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import morenocazalilla.jesusmaria.databinding.ItemCardviewBinding;
+import morenocazalilla.jesusmaria.databinding.PersonajeCardviewBinding;
 
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 
-    private final ItemCardviewBinding binding;
+    private final PersonajeCardviewBinding binding;
 
 
     //Pasamos por parámetro el binding del layout item_cardview.xml
-    public ViewHolder(ItemCardviewBinding binding) {
+    public ViewHolder(PersonajeCardviewBinding binding) {
         super(binding.getRoot());
         this.binding = binding;
     }

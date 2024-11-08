@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import morenocazalilla.jesusmaria.databinding.ItemCardviewBinding;
+import morenocazalilla.jesusmaria.databinding.PersonajeCardviewBinding;
 
 /**
  * Clase adaptadora para RecyclerView
@@ -34,7 +34,7 @@ public class PersonajeRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolde
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        ItemCardviewBinding binding = ItemCardviewBinding.inflate(
+        PersonajeCardviewBinding binding = PersonajeCardviewBinding.inflate(
                 LayoutInflater.from(parent.getContext()), parent, false);
 
         return new ViewHolder(binding);
