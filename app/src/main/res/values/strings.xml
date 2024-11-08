@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PMDM Tarea 2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="detalles_del_personaje">Detalle del personaje</string>
+    <string name="nombre_del_personaje">Personaje</string>
+    <string name="boton_volver">Volver</string>
+</resources>
