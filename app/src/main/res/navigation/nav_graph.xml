@@ -2,16 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/personajeDetailFragment">
+    app:startDestination="@id/personajeListFragment">
 
     <fragment
         android:id="@+id/personajeDetailFragment"
         android:name="morenocazalilla.jesusmaria.PersonajeDetailFragment"
-        android:label="PersonajeDetailFragment" >
-        <action
-            android:id="@+id/action_personajeDetailFragment_to_personajeListFragment"
-            app:destination="@id/personajeListFragment" />
-    </fragment>
+        android:label="PersonajeDetailFragment" />
     <fragment
         android:id="@+id/personajeListFragment"
         android:name="morenocazalilla.jesusmaria.PersonajeListFragment"

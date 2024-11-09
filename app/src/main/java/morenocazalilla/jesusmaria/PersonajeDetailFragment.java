@@ -2,6 +2,8 @@ package morenocazalilla.jesusmaria;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -27,18 +29,19 @@ public class PersonajeDetailFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         //obetener datos del argumento que inicia este fragmento
         if (getArguments() != null) {
-            int image = getArguments().getInt("image");
+
             String name = getArguments().getString("name");
             String description = getArguments().getString("description");
-            String habilidades = getArguments().getString("ability");
+            String ability = getArguments().getString("ability");
+            int image = getArguments().getInt("image");
 
             //asignamos los datos a los componentes
-            binding.tvHabilidades.setText(habilidades);
+            binding.tvHabilidades.setText(ability);
             binding.ivPersonaje.setImageResource(image);
             binding.tvName.setText(name);
             binding.tvPersonajeDescripcion.setText(description);

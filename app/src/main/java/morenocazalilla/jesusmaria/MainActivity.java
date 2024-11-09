@@ -9,8 +9,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import morenocazalilla.jesusmaria.databinding.ActivityMainBinding;
 
@@ -41,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
 
         bundle.putString("name", personaje.getName());
-        bundle.putInt("image", personaje.getPhotoID());
         bundle.putString("description", personaje.getDescription());
         bundle.putString("ability", personaje.getAbility());
+        bundle.putInt("image", personaje.getPhotoID());
         
 
         // Navega al Fragment con el bundle
