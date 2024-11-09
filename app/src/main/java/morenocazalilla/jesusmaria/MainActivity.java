@@ -17,14 +17,13 @@ import morenocazalilla.jesusmaria.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private NavController navController;
-    private ActivityMainBinding binding;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
 
         // viewBinding, inflamos el Main Layout
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
 
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString("name", personaje.getName());
         bundle.putInt("image", personaje.getPhotoID());
         bundle.putString("description", personaje.getDescription());
-        bundle.putString("habilidades", personaje.getHabilidades());
+        bundle.putString("ability", personaje.getAbility());
         
 
         // Navega al Fragment con el bundle

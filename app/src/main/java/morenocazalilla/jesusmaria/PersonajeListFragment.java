@@ -19,7 +19,6 @@ public class PersonajeListFragment extends Fragment {
 
     private PersonajeListFragmentBinding binding;
     private ArrayList<Personaje> listPersonajes;
-    private PersonajeRecyclerViewAdapter adaptador;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -35,7 +34,7 @@ public class PersonajeListFragment extends Fragment {
         inicializarDatos();
 
         //Configura el RecyclerView
-        adaptador = new PersonajeRecyclerViewAdapter(listPersonajes, getActivity());
+        PersonajeRecyclerViewAdapter adaptador = new PersonajeRecyclerViewAdapter(listPersonajes, getActivity());
         binding.personajeRecyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.personajeRecyclerview.setAdapter(adaptador);
 
@@ -56,26 +55,22 @@ public class PersonajeListFragment extends Fragment {
 
         Personaje MarioBross = new Personaje("Mario",
                 "Mario es muy positivo y siempre está alegre.",
-                R.drawable.mario,
-                "Increíble capacidad para saltar, destreza en el combate");
+                "Increíble capacidad para saltar, destreza en el combate", R.drawable.mario);
         listPersonajes.add(MarioBross);
         //*
         Personaje Peach = new Personaje("Peach",
                 "Siempre está trabajando para crear un mundo en el que todos puedan convivir juntos y felices.",
-                R.drawable.peach,
-                "Puede flotar en el aire, lo que le da una buena ventaja al ser arrojada y poder regresar.");
+                "Puede flotar en el aire, lo que le da una buena ventaja al ser arrojada y poder regresar.", R.drawable.peach);
         listPersonajes.add(Peach);
         //*
         Personaje Luigi = new Personaje("Luigi",
                 "Un poco de nervioso, especialmente si hay fantasmas por ahí. Es el hermano menor de Mario.",
-                R.drawable.luigi,
-                "Salta más alto pero corre más lento.");
+                "Salta más alto pero corre más lento.", R.drawable.luigi);
         listPersonajes.add(Luigi);
         //*
         Personaje Toad = new Personaje("Toad",
                 "Tiene manchas en la cabeza, es muy alegre y leal.",
-                R.drawable.toad,
-                "Es uno de los protectores de la Princesa Peach.");
+                "Es uno de los protectores de la Princesa Peach.", R.drawable.toad);
         listPersonajes.add(Toad);
     }
 

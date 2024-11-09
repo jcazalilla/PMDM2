@@ -35,7 +35,7 @@ public class PersonajeDetailFragment extends Fragment {
             int image = getArguments().getInt("image");
             String name = getArguments().getString("name");
             String description = getArguments().getString("description");
-            String habilidades = getArguments().getString("habilidades");
+            String habilidades = getArguments().getString("ability");
 
             //asignamos los datos a los componentes
             binding.tvHabilidades.setText(habilidades);

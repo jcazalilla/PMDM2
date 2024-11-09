@@ -3,11 +3,13 @@ package morenocazalilla.jesusmaria;
 public class Personaje {
     String name;
     String description;
+    String ability;
+    int photoID;
 
-    public Personaje(String name, String description, int photoID, String habilidades) {
+    public Personaje(String name, String description, String ability, int photoID) {
         this.name = name;
         this.description = description;
-        this.habilidades = habilidades;
+        this.ability = ability;
         this.photoID = photoID;
     }
 
@@ -27,12 +29,12 @@ public class Personaje {
         this.description = description;
     }
 
-    public String getHabilidades() {
-        return habilidades;
+    public String getAbility() {
+        return ability;
     }
 
-    public void setHabilidades(String habilidades) {
-        this.habilidades = habilidades;
+    public void setAbility(String ability) {
+        this.ability = ability;
     }
 
     public int getPhotoID() {
@@ -42,8 +44,4 @@ public class Personaje {
     public void setPhotoID(int photoID) {
         this.photoID = photoID;
     }
-
-    String habilidades;
-    int photoID;
-
 }

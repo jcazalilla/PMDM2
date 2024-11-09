@@ -15,7 +15,7 @@ import morenocazalilla.jesusmaria.databinding.PersonajeCardviewBinding;
 /**
  * Clase adaptadora para RecyclerView
  */
-public class PersonajeRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class PersonajeRecyclerViewAdapter extends RecyclerView.Adapter<PersonajeViewHolder> {
 
     private final ArrayList<Personaje> listPersonajes;
     private final Context context;
@@ -32,16 +32,16 @@ public class PersonajeRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolde
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PersonajeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         PersonajeCardviewBinding binding = PersonajeCardviewBinding.inflate(
                 LayoutInflater.from(parent.getContext()), parent, false);
 
-        return new ViewHolder(binding);
+        return new PersonajeViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PersonajeViewHolder holder, int position) {
 
         Personaje currentPersonaje = this.listPersonajes.get(position);
         holder.bind(currentPersonaje);
